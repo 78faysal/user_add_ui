@@ -1,0 +1,17 @@
+ul{
+    text-align: center;
+    margin: 2rem;
+}
+.navItem{
+    display: inline;
+    text-decoration: none;
+    padding: 1rem;
+}
+.navItem:hover{
+    background-color: rgb(201, 213, 254);
+    border-radius: 10px;
+}
+
+/* @media screen, (width: ) {
+    
+} */
