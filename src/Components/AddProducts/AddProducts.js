@@ -55,7 +55,7 @@ const AddProducts = () => {
                         <Form.Control type="text" ref={aboutRef} placeholder="Write something about you" />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>About</Form.Label>
+                        <Form.Label>Image</Form.Label>
                         <Form.Control type="text" ref={imageRef} placeholder="Provide your image link" />
                     </Form.Group>
                    
