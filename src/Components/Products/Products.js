@@ -12,6 +12,8 @@ const Products = () => {
         setBtnText(text)
     }
 
+
+
     useEffect(() => {
         fetch('http://localhost:1000/userInfo')
             .then(res => res.json())
@@ -39,6 +41,22 @@ const Products = () => {
             })
     }
 
+
+    // follower increase decrease
+
+    const [isFollowed, setIsFollowed] = useState(false);
+    const [followerCount, setFollowerCount] = useState(0);
+
+    function handleFollowClick() {
+        setIsFollowed(true);
+        setFollowerCount(prevCount => prevCount + 1);
+    }
+
+    function handleUnfollowClick() {
+        setIsFollowed(false);
+        setFollowerCount(prevCount => prevCount - 1);
+    }
+
     return (
         <div>
             <div className='profiles'>
@@ -53,11 +71,15 @@ const Products = () => {
                     <div className="title">Web Developer</div>
                     <div className="actions">
                         <div className="follow-info">
-                            <h2><a href="#"><span>2945</span><small>Followers</small></a></h2>
+                            <h2><a href="#"><span>{2559 + followerCount}</span><small>Followers</small></a></h2>
                             <h2><a href="#"><span>10</span><small>Following</small></a></h2>
                         </div>
                         <div className='btn-section'>
-                            <button className="follow-btn me-3" onClick={() => handleBtnClick('Following')}>{btnText}</button>
+                            {isFollowed ? (
+                                <button className="follow-btn me-3" onClick={handleUnfollowClick}>Following</button>
+                            ) : (
+                                <button className="follow-btn me-3" onClick={handleFollowClick}>Follow</button>
+                            )}
                             <button className="contact-btn">Contact</button>
                         </div>
                     </div>

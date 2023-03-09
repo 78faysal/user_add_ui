@@ -36,6 +36,7 @@ const Header = () => {
                             <Navbar.Brand href="#">Profile Card</Navbar.Brand>
                             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
                             <Navbar.Offcanvas
+                                className="bg-secondary"
                                 id={`offcanvasNavbar-expand-${expand}`}
                                 aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`}
                                 placement="end"
@@ -47,9 +48,9 @@ const Header = () => {
                                 </Offcanvas.Header>
                                 <Offcanvas.Body>
                                     <Nav className="justify-content-end flex-grow-1 pe-3">
-                                        <Link className='navItem' to='/'>Home</Link>
-                                        <Link className='navItem' to='/userInfo'>Profiles</Link>
-                                        <Link className='navItem' to='/add/products'>Add Profile</Link>
+                                        {/* <Link className='navItem' to='/'>Home</Link> */}
+                                        <Link className='navItem fs-6' to='/userInfo'>Profiles</Link>
+                                        <Link className='navItem fs-6' to='/add/products'>Add Profile</Link>
                                     </Nav>
 
                                 </Offcanvas.Body>
